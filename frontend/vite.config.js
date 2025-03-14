@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://lyric-match-g3x0.onrender.com',
         changeOrigin: true,
         secure: false,
       },
