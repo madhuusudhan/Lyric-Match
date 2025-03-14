@@ -122,7 +122,7 @@ function App() {
         </button>
       </form>
 
-      {loadingResult ? <Loader /> : result && <Result answer={result} />}
+      {loadingResult ? <Loader /> : result && <Result answer={result} actualTitle={actualTitle} hints ={hints} />}
     </div>
   );
 }
