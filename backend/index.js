@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 configDotenv();
 app.use(json());
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.get("/api/fetchLyrics",fetchLyrics);
 app.post("/api/check-answer",checkAnswer);
 app.listen(port, () => {
