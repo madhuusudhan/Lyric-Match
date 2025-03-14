@@ -18,7 +18,7 @@ function App() {
   const lyricFetcher = async () => {
     setLoadingLyrics(true);
     try {
-      const response = await fetch("/api/fetchLyrics");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/fetchLyrics`);
       const data = await response.json();
       setLyricSnippet(data.snippet);
       setActualTitle(data.actualTitle);
@@ -38,7 +38,7 @@ function App() {
 
     const inputValue = e.target[0].value;
     try {
-      const response = await fetch("/api/check-answer", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/check-answer`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userAnswer: inputValue, actualTitle }),
